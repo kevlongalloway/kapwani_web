@@ -9,4 +9,8 @@ class Image extends Model
     protected $fillable = [
         'name', 
     ];
+
+    public function imageable(){
+    	return $this->morphTo();
+    }
 }
