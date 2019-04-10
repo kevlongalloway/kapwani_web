@@ -24,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('home',compact('posts'));
+        $posts = Post::withoutGlobalScope();
+        $products = Product::withoutGlobalScope();
+        return view('home',compact('posts'))->with('products',$products);
     }
 }

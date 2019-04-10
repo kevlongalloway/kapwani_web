@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('subtitle');
             $table->text('description');
+            $table->boolean('is_posted')->nullable();
             $table->timestamps();
         });
     }

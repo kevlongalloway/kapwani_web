@@ -14,20 +14,17 @@
                         </div>
                     @endif
                     <div class="list-group">
-                      <a href="#" class="list-group-item list-group-item-action">Add New</a>
-                      <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                      <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                      <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+                      <a href="#" class="list-group-item list-group-item-action">Add New Product</a>
+                      @foreach($products as $product)
+                      <a href="#" class="list-group-item list-group-item-action">{{ $product->title }}</a>
+                      @endforeach
                     </div>
                     <div class="list-group">
                       <a href="#" class="list-group-item list-group-item-action active">
                         Cras justo odio
                       </a>
-                      <a href="#" class="list-group-item list-group-item-action">Add New</a>
-                      <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                      <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                      <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+                      <a href="#" class="list-group-item list-group-item-action">Add New Blog Post</a>
+                      <a href="#" class="list-group-item list-group-item-action">{{$post->title}}</a>
                     </div>
                   
                 </div>
