@@ -28,4 +28,6 @@ class HomeController extends Controller
         $products = Product::withoutGlobalScope();
         return view('home',compact('posts'))->with('products',$products);
     }
+
+    
 }

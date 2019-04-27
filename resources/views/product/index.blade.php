@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Products</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -19,13 +19,6 @@
                       <a href="#" class="list-group-item list-group-item-action">{{ $product->title }}</a>
                       @endforeach
                     </div>
-                    <div class="list-group">
-                      @foreach($posts as $post)
-                      <a href="#" class="list-group-item list-group-item-action">Add New Blog Post</a>
-                      <a href="#" class="list-group-item list-group-item-action">{{$post->title}}</a>
-                      @endforeach
-                    </div>
-                  
                 </div>
             </div>
         </div>
