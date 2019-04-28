@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->decimal('price',6,2);
             $table->boolean('is_posted')->nullable();
             $table->timestamps();
-        });
+        }); 
     }
 
     /**

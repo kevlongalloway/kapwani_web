@@ -5,7 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Products</div>
+                <div class="card-header">Products
+                    @auth
+                    <span style="float:right"><a href="{{ route('product.create') }}">Create New Product</a></span>
+                    @endauth
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))

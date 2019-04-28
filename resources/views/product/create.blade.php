@@ -8,7 +8,7 @@
                 <div class="card-header">Create Product</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('products.create') }}">
+                    <form method="POST" action="{{ route('product.update') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -37,31 +37,40 @@
                                     </span>
                                 @endif
                             </div>
-                        </div>                        
+                        </div> 
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <label for="price" class="col-md-4 col-form-label text-md-right">Price</label>
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
+                            <div class="col-md-6">
+                                <input id="price" type="price" placeholder="eg. '1.99, 59.99'" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}" required autofocus>
+
+                                @if ($errors->has('price'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('price') }}</strong>
+                                    </span>
+                                @endif
                             </div>
-                        </div>
+                        </div>    
+
+                        <div class="form-group row">
+                          <div class="file-field">
+                            <div class="btn btn-primary btn-sm float-left">
+                              <span>Choose files</span>
+                              <input type="file" multiple>
+                            </div>
+                            <div class="file-path-wrapper">
+                              <input class="file-path validate" type="text" placeholder="Upload one or more files">
+                            </div>
+                          </div>
+                        </div>                    
+
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    Submit
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
                             </div>
                         </div>
                     </form>
